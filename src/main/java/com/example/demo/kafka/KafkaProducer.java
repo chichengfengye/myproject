@@ -15,8 +15,10 @@ public class KafkaProducer {
     @Autowired
     private KafkaTemplate<String,String> kafkaTemplate;
 
+   /*success
+
     @Scheduled(fixedRate = 3000)
     public void send() {
-        kafkaTemplate.send(topic, "哈喽"+System.currentTimeMillis());
-    }
+        kafkaTemplate.send(topic, "哈喽" + System.currentTimeMillis());
+    }*/
 }
