@@ -1,25 +1,11 @@
 spring:
-  kafka:
-    consumer:
-      bootstrap-servers: 192.168.123.127:9092,192.168.123.127:9093
-      group-id: trend
-    producer:
-      bootstrap-servers: 192.168.123.127:9092,192.168.123.127:9093
-    topic: jftest
-
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/bootstudy
-    name: bootstudy
-#    type: com.alibaba.druid.pool.DruidDataSource # 使锟斤拷druid 锟斤拷锟斤拷源
-
-
+    url: jdbc:mysql://192.168.1.4:3306/bootstudy
+    name: mysql_hp_bootstudy
+#    type: com.alibaba.druid.pool.DruidDataSource # 使用druid 数据源
 mybatis:
   type-aliases-package: com.example.demo.model
   mapper-locations: classpath:mapper/*.xml
-
-word:
-  hello: haha
-  hi: youhe

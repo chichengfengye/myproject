@@ -1,22 +1,13 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Message;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloWorldController {
-    @Value("${word.hello}")
-    private String text;
-
-    @RequestMapping(value = "${word.hi}")
-    public String hi(){
-        return "hi";
-    }
-
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String hello(@RequestParam String name){
-        return "get method,hello "+name+"!" + "yaml中的值："+text;
+        return "get method,hello "+name+"!";
     }
 
     @RequestMapping(value = "/post",method = RequestMethod.POST)
