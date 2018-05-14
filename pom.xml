@@ -69,11 +69,16 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
         <!--socket.io-->
-        <!--<dependency>
+        <dependency><!--客戶端-->
             <groupId>io.socket</groupId>
             <artifactId>socket.io-client</artifactId>
             <version>1.0.0</version>
-        </dependency>-->
+        </dependency>
+        <dependency><!--server端-->
+            <groupId>com.corundumstudio.socketio</groupId>
+            <artifactId>netty-socketio</artifactId>
+            <version>1.7.12</version>
+        </dependency>
 
     </dependencies>
 

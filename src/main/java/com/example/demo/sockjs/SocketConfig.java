@@ -9,9 +9,13 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 public class SocketConfig implements WebSocketConfigurer {
     @Autowired
     private MyHandler myHandler;
+    @Autowired
+    private MyHandshakeInterceptor myHandshakeInterceptor;
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
-        webSocketHandlerRegistry.addHandler(myHandler,"/jf").withSockJS();
+        //注册websocket实现类，指定参数访问地址;allowed-origins="*" 允许跨域
+        webSocketHandlerRegistry.addHandler(myHandler, "/jf").addInterceptors(myHandshakeInterceptor).setAllowedOrigins("*");
+        webSocketHandlerRegistry.addHandler(myHandler,"/sockjs/jf").withSockJS();
     }
 }

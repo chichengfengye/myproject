@@ -7,11 +7,13 @@
     <script type="text/javascript">
         var url = "localhost";
         var websocket = null;
-        // if ('WebSocket' in window) {
-        //     websocket = new WebSocket("ws://" + url + "/ws");
-        // } else {
-            websocket = new SockJS("http://" + url + "/jf");
-        // }
+        if ('WebSocket' in window) {
+            console.log("ws");
+            websocket = new WebSocket("ws://" + url + "/jf");
+        } else {
+            console.log("sockjs");
+            websocket = new SockJS("http://" + url + "/sockjs/jf");
+        }
         websocket.onopen = onOpen;
         websocket.onmessage = onMessage;
         websocket.onerror = onError;
@@ -54,9 +56,11 @@
                 websocket = null;
             }
             if ('WebSocket' in window) {
-                websocket = new WebSocket("ws://" + url + "/ws");
+                console.log("ws");
+                websocket = new WebSocket("ws://" + url + "/jf");
             } else {
-                websocket = new SockJS("http://" + url + "/sockjs/ws");
+                console.log("sockjs");
+                websocket = new SockJS("http://" + url + "/sockjs/jf");
             }
             websocket.onopen = onOpen;
             websocket.onmessage = onMessage;
