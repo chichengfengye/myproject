@@ -12,10 +12,10 @@ import org.springframework.stereotype.Component;
 public class KafkaProducer {
     @Value("${spring.kafka.topic}")
     private String topic;
-    @Autowired
+//    @Autowired
     private KafkaTemplate<String,String> kafkaTemplate;
 
-    @Scheduled(fixedRate = 3000)
+//    @Scheduled(fixedRate = 3000)
     public void send() {
         kafkaTemplate.send(topic, "哈喽"+System.currentTimeMillis());
     }

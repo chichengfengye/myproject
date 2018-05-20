@@ -23,3 +23,42 @@ mybatis:
 word:
   hello: haha
   hi: youhe
+
+test:
+  nodes:
+    - name: jf
+      age: 10
+    - name: jd
+      age: 12
+
+
+
+redis:
+  nodes:
+    - host: 192.168.42.128
+      port: 7000
+    - host: 192.168.42.128
+      port: 7001
+    - host: 192.168.42.128
+      port: 7002
+    - host: 192.168.42.128
+      port: 7003
+    - host: 192.168.42.128
+      port: 7004
+    - host: 192.168.42.128
+      port: 7005
+    - host: 192.168.42.128
+      port: 7006
+    - host: 192.168.42.128
+      port: 7007
+    - host: 192.168.42.128
+      port: 7008
+  timeout: 5000
+  pool:
+    minIdle: 10
+    maxIdle: 10
+    maxTotal: 100
+    maxWaitMillis: 5000
+    testWhileIdle: true
+    testOnBorrow: true
+    testOnReturn: true
