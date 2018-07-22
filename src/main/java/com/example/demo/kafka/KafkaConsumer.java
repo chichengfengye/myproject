@@ -7,8 +7,9 @@ import org.springframework.stereotype.Component;
 //@Component
 public class KafkaConsumer {
 
+/*  success
     @KafkaListener(topics = "${spring.kafka.topic}")
     public void receive(String message) {
         System.out.println(message);
-    }
+    }*/
 }

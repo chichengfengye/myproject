@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.UploadFileMapper">
+
+    <!--<insert id="insertObj" useGeneratedKeys="true" keyProperty="id" keyColumn="id" >
+        insert into picture(base64, filepath)
+        values(#{base64},#{path})
+    </insert>-->
+    <insert id="insertObj" useGeneratedKeys="true" keyProperty="id" >
+        insert into picture(base64, filepath, name)
+        values(#{base64},#{filepath}, #{name})
+    </insert>
+
+    <select id="selectBase64ById" resultType="UpLoadFile">
+        select id, base64, filepath from picture
+        where id = #{id}
+    </select>
+
+</mapper>
